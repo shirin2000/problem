@@ -1,0 +1,64 @@
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px; /* Adjust the padding as needed */
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    table {
+        width: 80%;
+        margin: 20px auto; /* Center the table on the page */
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<h1>EDUCATION</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Problem</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for problem in problems %}
+            <tr>
+                <td><a href="{% url 'problem_detail' problem.id %}">{{ problem.problem }}</a></td>
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit">Add to My Project</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<button type="button">Request to Add a Problem</button>

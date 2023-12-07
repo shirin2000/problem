@@ -1,0 +1,64 @@
+<!-- add.html -->
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    form {
+        width: 50%;
+        margin: 20px auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<body>
+<h1>Add Problem</h1>
+{% if messages %}
+    {% for message in messages %}
+        <p class="success-message">{{ message }}</p>
+    {% endfor %}
+{% endif %}
+<form method="post" action="{% url 'add_problem' %}">
+    {% csrf_token %}
+    <label for="sector">Sector:</label>
+    <input type="text" name="sector" required>
+
+    <label for="problem_definition">Problem Definition:</label>
+    <textarea name="problem_definition" required></textarea>
+
+    <label for="problem">Problem:</label>
+    <input type="text" name="problem" required>
+
+    <label for="summary">Summary:</label>
+    <textarea name="summary" required></textarea>
+
+    <label for="reff_link">Reference Link:</label>
+    <input type="url" name="reff_link" required>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
