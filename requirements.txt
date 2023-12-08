@@ -15,7 +15,7 @@ Flask==2.0.3
 Flask-Mail==0.9.1
 gunicorn==21.2.0
 idna==3.4
-#setuptools<58.0.0
+setuptools<58.0.0
 #importlib-metadata==4.8.3
 imutils==0.5.4
 itsdangerous==2.0.1
