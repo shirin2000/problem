@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
-from .models import Problems
-from .forms import ProblemForm
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Problems, MyProject
+from .forms import ProblemForm, MyProjectForm
 
 def home(request):
     return render(request, 'home.html')
@@ -57,4 +57,23 @@ def add_problem(request):
     else:
         form = ProblemForm()
 
-    return render(request, 'add.html', {'form': form})
+    return render(request, 'add_problem.html', {'form': form})
+
+def add_to_my_project(request, problem_id):
+    problem = Problems.objects.get(pk=problem_id)
+
+    if request.method == 'POST':
+            # Create a new MyProject instance and save it to the database
+        my_project_instance = MyProject(
+            problem=problem.problem
+        )
+        my_project_instance.save()
+
+        return redirect('agriculture')  # Redirect to the agriculture page, adjust as needed
+
+    return render(request, 'agriculture.html', {'problem': problem, 'form': MyProjectForm()})
+
+
+def myproject_view(request):
+    myprojects = MyProject.objects.all()
+    return render(request, 'myproject.html', {'myprojects': myprojects})

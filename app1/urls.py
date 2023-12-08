@@ -30,7 +30,8 @@ urlpatterns = [
     path('research/', views.research, name='research'),
     path('problem/<int:problem_id>/', views.problem_detail, name='problem_detail'),
     path('add/', views.add_problem, name='add_problem'),
-
+    path('add_to_my_project/<int:problem_id>/', views.add_to_my_project, name='add_to_my_project'),
+    path('myproject/', views.myproject_view, name='myproject'),
     # Add other paths as needed...
 ]
 

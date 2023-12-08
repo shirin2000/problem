@@ -1,3 +1,12 @@
+<!-- myproject.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <!-- Add any additional styles or scripts if needed -->
+</head>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -38,7 +47,10 @@
         cursor: pointer;
     }
 </style>
-<h1>AGRICULTURE</h1>
+<body>
+
+<h1>My Project</h1>
+
 <table>
     <thead>
         <tr>
@@ -47,17 +59,21 @@
         </tr>
     </thead>
     <tbody>
-        {% for problem in problems %}
+        {% for project in myprojects %}
             <tr>
-                <td><a href="{% url 'problem_detail' problem.id %}">{{ problem.problem }}</a></td>
+                <td>{{ project.problem }}</td>
                 <td>
-                    <form method="post" action="{% url 'add_to_my_project' problem.id %}">
+                    <form method="post" action="">
                         {% csrf_token %}
-                        <button type="submit">Add to My Project</button>
+                        <button type="submit">Enter to Project</button>
                     </form>
                 </td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
-<button type="button">Request to Add a Problem</button>
+
+<!-- Add any additional content or styling if needed -->
+
+</body>
+</html>
