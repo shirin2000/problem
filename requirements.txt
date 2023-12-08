@@ -4,7 +4,6 @@ certifi==2022.12.7
 charset-normalizer==2.0.12
 click==8.0.4
 colorama==0.4.5
-dataclasses==0.8
 demjson==2.2.4
 Django==3.2.23
 dlib==19.7.0
