@@ -52,7 +52,6 @@ def add_problem(request):
         form = ProblemForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully added!')
             return redirect('add_problem')  # Change 'success_page' to the desired URL name
     else:
         form = ProblemForm()
