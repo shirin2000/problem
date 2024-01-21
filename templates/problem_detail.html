@@ -1,0 +1,55 @@
+<!-- problem.html -->
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    table {
+        width: 60%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<h1>Problem Details</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Column</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Sector</td>
+            <td>{{ problem.sector }}</td>
+        </tr>
+        <tr>
+            <td>Problem</td>
+            <td>{{ problem.problem }}</td>
+        </tr>
+        <tr>
+            <td>Summary</td>
+            <td>{{ problem.summary }}</td>
+        </tr>
+        <tr>
+            <td>Reference Link</td>
+            <td><a href=" {{ problem.reff_link }}"><button type="button">Go to reff page</button></a></td>
+        </tr>
+        <!-- Add more rows for additional fields if needed -->
+    </tbody>
+</table>
