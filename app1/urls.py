@@ -29,9 +29,20 @@ urlpatterns = [
     path('sports/', views.sports, name='sports'),
     path('research/', views.research, name='research'),
     path('problem/<int:problem_id>/', views.problem_detail, name='problem_detail'),
-    path('add/', views.add_problem, name='add_problem'),
+    path('add_problem/', views.add_problem, name='add_problem'),
     path('add_to_my_project/<int:problem_id>/', views.add_to_my_project, name='add_to_my_project'),
     path('myproject/', views.myproject_view, name='myproject'),
+    path('remove_project/<int:project_id>/', views.remove_project, name='remove_project'),
+    path('myproject/', views.myproject_view, name='myproject_view'),
+    path('solution/<int:project_id>/', views.solution_view, name='solution_view'),
+    path('blog_list', views.blog_list, name='blog_list'),
+    path('blog/<int:pk>/', views.blog_detail, name='blog_detail'),
+    path('blog/new/', views.blog_new, name='blog_new'),
+    path('blog/<int:pk>/edit/', views.blog_edit, name='blog_edit'),
+    path('blog/<int:pk>/delete/', views.blog_delete, name='blog_delete'),
+    path('success/', views.success, name='success'),
+    path('exist/', views.exist, name='exist'),
+
     # Add other paths as needed...
 ]
 
